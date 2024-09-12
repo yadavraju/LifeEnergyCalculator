@@ -87,7 +87,7 @@ export default function Home() {
                                         name="interestRate"
                                         label="Enter average weekly working hours?"
                                         placeholder="40"
-                                        unit="%"
+                                        unit="/week"
                                         value={interestRate}
                                         error={errors?.interestRate}
                                         onChange={onInputChange}
@@ -96,7 +96,7 @@ export default function Home() {
                                         name="loanTenure"
                                         label="Amount you going to spend"
                                         placeholder="2000"
-                                        unit="Yr"
+                                        unit=""
                                         value={loanTenure}
                                         error={errors?.loanTenure}
                                         onChange={onInputChange}
