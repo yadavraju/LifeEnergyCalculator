@@ -1,44 +1,40 @@
-import { FieldValidation } from "@/types";
-import { isNumber } from "@/utils";
+import {FieldValidation} from "@/types";
+import {isNumber} from "@/utils";
 
 const FIELD_VALIDATIONS: FieldValidation = {
-  loanAmount: [
-    { test: (value) => !!value, message: "Loan amount is required" },
-    {
-      test: (value) => isNumber(value),
-      message: "Loan amount must be a numeric value",
-    },
-    {
-      test: (value) => value > 0,
-      message: "Loan amount must be greater than 0",
-    },
-  ],
-  interestRate: [
-    { test: (value) => !!value, message: "Interest rate is required" },
-    {
-      test: (value) => isNumber(value),
-      message: "Interest rate must be a numeric value",
-    },
-    {
-      test: (value) => value > 0,
-      message: "Interest rate must be greater than 0",
-    },
-  ],
-  loanTenure: [
-    { test: (value) => !!value, message: "Loan tenure is required" },
-    {
-      test: (value) => isNumber(value),
-      message: "Loan tenure must be a numeric value",
-    },
-    {
-      test: (value) => value > 0,
-      message: "Loan tenure must be greater than 0",
-    },
-    // {
-    //   test: (value) => value <= 50,
-    //   message: "Loan tenure must be less than 50",
-    // },
-  ],
+    loanAmount: [
+        {test: (value) => !!value, message: "Total salary is required"},
+        {
+            test: (value) => isNumber(value),
+            message: "Total salary must be a numeric value",
+        },
+        {
+            test: (value) => value > 0,
+            message: "Total salary must be greater than 0",
+        },
+    ],
+    interestRate: [
+        {test: (value) => !!value, message: "Work hour is required"},
+        {
+            test: (value) => isNumber(value),
+            message: "Work hour must be a numeric value",
+        },
+        {
+            test: (value) => value > 0 && value <= 24,
+            message: "Work hour must be greater than 0 and less than 24 hours",
+        },
+    ],
+    loanTenure: [
+        {test: (value) => !!value, message: "Spend Amount is required"},
+        {
+            test: (value) => isNumber(value),
+            message: "Amount must be a numeric value",
+        },
+        {
+            test: (value) => value > 0,
+            message: "Amount must be greater than 0",
+        },
+    ],
 };
 
-export { FIELD_VALIDATIONS };
+export {FIELD_VALIDATIONS};

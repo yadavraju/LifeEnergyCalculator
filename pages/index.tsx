@@ -85,9 +85,9 @@ export default function Home() {
                                     />
                                     <TextField
                                         name="interestRate"
-                                        label="Enter average weekly working hours?"
-                                        placeholder="40"
-                                        unit="/week"
+                                        label="Enter average daily working hours?"
+                                        placeholder="8"
+                                        unit="/day"
                                         value={interestRate}
                                         error={errors?.interestRate}
                                         onChange={onInputChange}
@@ -124,7 +124,8 @@ export default function Home() {
                             </form>
                         </div>
                         <h1 className="text-center mt-6 text-2xl leading-8 text-gray-600">
-                            To spend {loanTenure} money you would need to work
+                            Spending {loanTenure} will cost you this many hours of your life based on your daily work
+                            hours
                         </h1>
                     </div>
                     <EMI/>

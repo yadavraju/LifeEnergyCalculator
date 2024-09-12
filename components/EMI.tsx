@@ -22,14 +22,14 @@ function EMI() {
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8 py-1 sm:py-3">
       <dl className="grid grid-cols-1 gap-y-16 gap-x-6 text-center lg:grid-cols-2">
-        <Outcome label="Total hour" value={outcome?.emi} />
+        <Outcome label="Total hour to recover the cost" value={outcome?.emi} />
         <Outcome
           label="Total days"
           value={outcome?.totalInterestPayable}
         />
-        <Outcome label="Total month" value={outcome?.totalPayment} />
+        <Outcome label="Total month to recover cost" value={outcome?.totalPayment} />
         <Outcome
-          label="Total year"
+          label="Total year to recover cost"
           value={outcome?.principalAmount}
         />
       </dl>

@@ -1,4 +1,3 @@
-import { CURRENCY, MONTHS_IN_YEAR } from "@/constants";
 import {
   Errors,
   InitialState,
@@ -35,10 +34,10 @@ function calculateEmiOutcome(
   prepayments: Prepayments
 ) {
   //Total Hours=40 hours/week×50 weeks/year=2,000 hours/year
-  const totalWorkHourInYear = interestRate*50
+  const totalWorkHourInYear = interestRate*260 // on average people works for 260 days in year
   const realHourlyWage = loanAmount/totalWorkHourInYear;
   const timeToEarnInHour = loanTenure/realHourlyWage;
-  const timeToEarnInDays =  timeToEarnInHour/8
+  const timeToEarnInDays =  timeToEarnInHour/interestRate // interestRate total hour you are working every day
   const timeToEarnInMonths = timeToEarnInDays/22 //Assuming an average of 22 workdays per month:
   const timeToEarnInYears = timeToEarnInMonths/12
 
